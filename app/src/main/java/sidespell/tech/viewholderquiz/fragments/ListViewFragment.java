@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import sidespell.tech.viewholderquiz.MovieAdapter;
+import sidespell.tech.viewholderquiz.adapters.MovieAdapter;
 import sidespell.tech.viewholderquiz.R;
 import sidespell.tech.viewholderquiz.controllers.MovieController;
 import sidespell.tech.viewholderquiz.model.Movie;
@@ -37,7 +37,7 @@ public class ListViewFragment extends Fragment {
         mListView = (ListView) view.findViewById(R.id.listView);
         mTextView = (TextView) view.findViewById(android.R.id.empty);
 
-        MovieAdapter adapter = new MovieAdapter(this, R.layout.movie_item, movieList);
+        MovieAdapter adapter = new MovieAdapter(inflater.getContext(), R.layout.movie_item, movieList);
         mListView.setAdapter(adapter);
 
         if (movieList == null) {
